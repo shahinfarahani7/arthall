@@ -1,0 +1,13 @@
+.add-to-do-item-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+    color: white;
+}
+
+.add-to-do-textfield {
+    background-color: #31A2A9;
+    border-radius: 8px;
+    color: white;
+    height: 53px;
+}

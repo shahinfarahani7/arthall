@@ -1,0 +1,10 @@
+.links {
+    text-decoration: none;
+    color: white;
+    margin-right: 30px;
+    padding: 10px;
+}
+
+.links-selected {
+    color: #F1C400;
+}

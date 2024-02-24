@@ -1,0 +1,6 @@
+.content-container {
+    background-color: #469198;
+    height: calc(100vh - 87px);
+    padding: 24px;
+    color: white;
+}
