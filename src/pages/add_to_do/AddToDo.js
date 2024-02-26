@@ -153,7 +153,7 @@ const AddToDo = () => {
                     }}
                   />
                 </Grid>
-                <Grid item xs={10} sm={6} md={6} xl={6}>
+                <Grid item xs={10} sm={6} >
                   <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DemoContainer components={["DatePicker"]}>
                       <DatePicker
@@ -169,9 +169,8 @@ const AddToDo = () => {
                                 border: "none",
                                 backgroundColor: "#31A2A9",
                                 direction:"rtl",
-                                
                               },
-
+                              width:"100%",
                             },
                           },
                         }}
