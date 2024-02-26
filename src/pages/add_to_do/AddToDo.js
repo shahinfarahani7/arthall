@@ -159,9 +159,9 @@ const AddToDo = () => {
                       <DatePicker
                       autoFocus={false}
                       
-                      // value={calender}
-                      // onChange={(newValue) => {
-                      //   setCalender(newValue)}}
+                      value={calender}
+                      onChange={(newValue) => {
+                        setCalender(newValue)}}
                         slotProps={{
                           textField: {
                             sx: {
