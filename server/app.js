@@ -21,14 +21,14 @@ app.post('/api/add_todo', function (req, res) {
     let params = {
         title: req.body.title,
         description: req.body.description,
-        date: req.body.date
+        calender: req.body.calender
     }
     try {
         console.log(params);
         todoList.push({
             title: params.title,
             description: params.description,
-            date: params.date
+            calender: params.calender
         })
         res.send("OK")
     } catch (err) {

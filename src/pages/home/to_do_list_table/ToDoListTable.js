@@ -37,9 +37,9 @@ const ToDoListTable = () => {
                     borderCollapse: 'separate',
                     borderSpacing: '0px 6px',
                 }}>
-                    <TableHead>
+                    <TableHead sx={{ backgroundColor: '#31A2A9'}}>
                         <TableRow >
-                        <TableCell align="center" >عنوان</TableCell>
+                        <TableCell align="center">عنوان</TableCell>
                             <TableCell align="center">توضیح کامل</TableCell>
                             <TableCell align="center">تاریخ</TableCell>
                         </TableRow>
@@ -54,7 +54,7 @@ const ToDoListTable = () => {
                                     {row.title}
                                 </TableCell>
                                 <TableCell align="center">{row.description}</TableCell>
-                                <TableCell align="center">{row.date}</TableCell>
+                                <TableCell align="center">{row.calender}</TableCell>
                             </TableRow>
                         ))}
                     </TableBody>

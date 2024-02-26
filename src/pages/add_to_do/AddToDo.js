@@ -8,9 +8,9 @@ import {
   InputLabel,
   NativeSelect,
   Grid,
-  InputAdornment,
+
 } from "@mui/material";
-import EventIcon from "@mui/icons-material/Event";
+
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import api from "../../service/api";
@@ -21,9 +21,20 @@ import createCache from "@emotion/cache";
 import { prefixer } from "stylis";
 import stylisRTLPlugin from "stylis-plugin-rtl";
 
+import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import {
+  DatePicker,
+  LocalizationProvider,
+} from "@mui/x-date-pickers";
+
 const AddToDo = () => {
   const theme = createTheme({
     direction: "rtl",
+    typography: {
+      fontFamily: ["Public Sans", "sans-serif"].join(","),
+      color: "white",
+    },
   });
 
   const cacheRtl = createCache({
@@ -143,46 +154,32 @@ const AddToDo = () => {
                   />
                 </Grid>
                 <Grid item xs={10} sm={6} md={6} xl={6}>
-                  <TextField
-                    className="add-to-do-textfield"
-                    type="text"
-                    color="primary"
-                    onChange={(e) => setCalender(e.target.value)}
-                    value={calender}
-                    fullWidth
-                    variant="standard"
-                    dir="rtl"
-                    InputProps={{
-                      disableUnderline: true,
-                      startAdornment: (
-                        <InputAdornment position="start">
-                          <EventIcon
-                            sx={{
-                              color: "white",
-                              marginTop: "20px",
-                              marginLeft: "10px",
-                            }}
-                          />
-                        </InputAdornment>
-                      ),
-                    }}
-                    InputLabelProps={{
-                      style: {
-                        color: "#fff",
-                        paddingRight: "5px",
-                        opacity: "50%",
-                        fontSize: "16px",
-                      },
-                    }}
-                    // InputProps={{
-                    //   disableUnderline: true,
-                    //   style: {
-                    //     padding: "8px",
-                    //   },
-                    // }}
-                  >
-                    <EventIcon sx={{ color: "white", mr: 1, my: 0.5 }} />
-                  </TextField>
+                  <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    <DemoContainer components={["DatePicker"]}>
+                      <DatePicker
+                      autoFocus={false}
+                      value={calender}
+                      onChange={(newValue) => {
+                        setCalender(newValue)}}
+                        slotProps={{
+                          textField: {
+                            sx: {
+                              ".MuiInputBase-root": {
+                                borderRadius: "8px",
+                                border: "none",
+                                backgroundColor: "#31A2A9",
+                                direction:"rtl",
+                                
+                              },
+
+                            },
+                          },
+                        }}
+
+                       
+                      />
+                    </DemoContainer>
+                  </LocalizationProvider>
                 </Grid>
                 <Grid item xs={10} sm={6} md={6}>
                   <FormControl
