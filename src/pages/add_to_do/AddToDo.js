@@ -158,9 +158,10 @@ const AddToDo = () => {
                     <DemoContainer components={["DatePicker"]}>
                       <DatePicker
                       autoFocus={false}
-                      value={calender}
-                      onChange={(newValue) => {
-                        setCalender(newValue)}}
+                      
+                      // value={calender}
+                      // onChange={(newValue) => {
+                      //   setCalender(newValue)}}
                         slotProps={{
                           textField: {
                             sx: {
@@ -169,6 +170,7 @@ const AddToDo = () => {
                                 border: "none",
                                 backgroundColor: "#31A2A9",
                                 direction:"rtl",
+                                ":hover":"none"
                               },
                               width:"100%",
                             },
@@ -180,7 +182,9 @@ const AddToDo = () => {
                     </DemoContainer>
                   </LocalizationProvider>
                 </Grid>
-                <Grid item xs={10} sm={6} md={6}>
+                <Grid item xs={10} sm={6} md={6}
+                sx={{marginTop:"8px"}}
+                >
                   <FormControl
                     className="add-to-do-textfield"
                     fullWidth
